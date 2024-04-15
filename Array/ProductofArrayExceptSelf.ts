@@ -10,16 +10,25 @@ function productExceptSelf(nums: number[]): number[] {
   }
   return result;
 }
+// function productExceptSelf(nums: number[]): number[] {
+//   const result = new Array(nums.length).fill(1);
+//   let prefix = 1;
+//   let postfix = 1;
+//   for (let i = 0; i < nums.length; ++i) {
+//       result[i] *= prefix
+//       result[nums.length - 1 - i] *= postfix;
+//       prefix *= nums[i]
+//       postfix *= nums[nums.length - 1 - i];
+//   }
+//   return result;
+// }
 
 console.log(productExceptSelf([1,2,3,4]));
 
 // Example 1:
 
-// Input: nums = [1,2,3,4,5]
-//               [1,2,6,24,120]
-//               [120,120,60,20,5]
-//               [120,60,40,30,24]
-//               [24,24,12,4]
+// Input: nums = [1,2,3,4]
+//               [24,12,8,4]
 // Output: [24,12,8,6]
 // Example 2:
 
