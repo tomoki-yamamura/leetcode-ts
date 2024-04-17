@@ -1,22 +1,26 @@
-function findMin(nums: number[]): number {
-  let left = 0
-  let right = nums.length - 1
-  let res = Infinity
+const findMin = (nums: number[]): number => {
+  let min = 5001;
 
-  while (left <= right) {
-    
-    const mid = left + Math.floor((right - left)/2)
-    if (nums[mid] > nums[nums.length -1]) {
-      left = mid + 1
+  let l = 0,
+    r = nums.length - 1;
+  while (l <= r) {
+    const m = Math.floor((l + r) / 2);
+    console.log(l, r, m);
+
+    min = Math.min(min, nums[m]);
+    if (nums[m] > nums[r]) {
+      l = m + 1;
     } else {
-      res = Math.min(res, nums[mid])
-      right = mid - 1
+      r = m - 1;
+      console.log(r);
     }
   }
-  return res
-}
 
-const arry = [3,4,5,1,2];
+  return min;
+};
+
+// const arry = [3,4,5,1,2];
+const arry = [1, 2, 3, 4];
 console.log(findMin(arry));
 
 // function sepFunc(nums: number[]): number[] {
