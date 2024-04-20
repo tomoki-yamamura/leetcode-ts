@@ -29,7 +29,7 @@ function threeSum(nums: number[]): number[][] {
   return result; // return the result array
 }
 
-const a = [-1,0,1,2,-1,-4]
+const a = [-1,-1,-1, -1, 2,2]
 
 const result = threeSum(a)
 console.log(result);
