@@ -1,5 +1,5 @@
-import wordBreak from "./DynamicPrograming/WordBreak";
+import combinationSum4 from "./DynamicPrograming/CombainSum";
 
-const s = "aaaaaaa"
-const wordDict = ["aaaa","aaa"]
-console.log(wordBreak(s, wordDict));
+const nums = [1,2,3]
+const target = 4
+console.log(combinationSum4(nums, target));
