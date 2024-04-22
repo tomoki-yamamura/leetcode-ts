@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "name": "leetcode-ts",
+  "description": "[Curated List of Top 75 LeetCode Questions to Save Your Time](https://www.teamblind.com/post/new-year-gift---curated-list-of-top-75-leetcode-questions-to-save-your-time-OaM1orEU)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomoki-yamamura/leetcode-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomoki-yamamura/leetcode-ts/issues"
+  },
+  "homepage": "https://github.com/tomoki-yamamura/leetcode-ts#readme"
+}
