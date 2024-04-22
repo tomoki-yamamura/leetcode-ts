@@ -1,22 +1,28 @@
 function wordBreak(s: string, wordDict: string[]): boolean {
-  const result: boolean[] = new Array(s.length).fill(false)
-  let left = 0
-  for (let right = 0; right <= s.length; right++) {
-    const sub = s.substring(left, right)
-    for(let word of wordDict) {
-      if(word === sub) {
-        result[right-1] = true
-      }
-    }
-    console.log(result);
-    
-  }
-  return result[s.length-1]
-};
+  const memo: { [key: string]: boolean } = {};
 
-const s = "aaaaaaa"
-const wordDict = ["aaaa","aaa"]
-console.log(wordBreak(s, wordDict));
+  const rec = (startIndex: number): boolean => {
+      if (startIndex === s.length) return true;
+      if (startIndex in memo) return memo[startIndex];
+
+      for (const word of wordDict) {
+          if (s.startsWith(word, startIndex)) {
+              if (rec(startIndex + word.length)) {
+                  memo[startIndex] = true;
+                  
+                  return true;
+              }
+          }
+      }
+
+      memo[startIndex] = false;
+      return false;
+  };
+
+  return rec(0);
+}
+
+export default wordBreak;
 
 // Example 1:
 
