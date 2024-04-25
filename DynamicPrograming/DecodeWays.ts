@@ -1,24 +1,44 @@
-export default function numDecodings(s: string): number {
-  if (s.slice(0, 1) === "0") {
-    return 0;
-  }
-  const len = s.length
+// function numDecodings(s: string): number {
+//   let [next1, next2] = [1, 1];
+//   for (let i = s.length - 1; i >= 0; --i) {
+//     let result: number;
+//     if (s[i] === "0") result = 0;
+//     else {
+//       result = next1;
+//       if (i <= s.length - 2 && parseInt(s.substring(i, i + 2)) <= 26)
+//         result += next2;
+//     }
+//     [next1, next2] = [result, next1];
+//   }
+//   return next1;
+// }
 
-  const cache: Record<number, number> = {}
-  cache[len] = 0
-  cache[len+1] = 0
-  cache[len-1] = s[len- 1] !== "0" ? 1 : 0
+// console.log(numDecodings("1203"));
 
-  for(let i = len-1; 0 <= i; i--) {
-    if(s[i] === "0" || i === len) continue
-    if((s[i] === "1" || s[i] === "2") && s[i+1] < "7") {
-      cache[i] += cache[i+2]
-      cache[i] += cache[i+1]
-    } else {
-      cache[i] = cache[i+2]
+
+
+function numDecodings(s: string): number {
+  const len: number = s.length;
+
+  const memo: Record<number, number> = {};
+
+  const dp = (i: number): number => {
+    if (i > len) return 0
+    if (i === len) return 1
+    if (s.charAt(i) === "0") return 0
+    if (memo[i] !== undefined) {
+      return memo[i]
     }
+    if (parseInt(s.substring(i, i+2)) > 26) {
+      const res = dp(i+1)
+      memo[i] = res
+      return res
+    }
+    const res = dp(i+1) + dp(i+2)
+    memo[i] = res
+    return res
   }
-  return cache[0]
-}
+  return dp(0)
+};
 
-console.log(numDecodings("12"));
+console.log(numDecodings("2263"));
