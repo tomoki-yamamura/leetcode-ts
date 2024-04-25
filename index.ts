@@ -1,5 +1,3 @@
-import combinationSum4 from "./DynamicPrograming/CombainSum";
+import numDecodings from "./DynamicPrograming/DecodeWays";
 
-const nums = [1,2,3]
-const target = 4
-console.log(combinationSum4(nums, target));
+console.log(numDecodings("12"));
