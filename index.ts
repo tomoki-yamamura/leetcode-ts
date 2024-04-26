@@ -1,3 +1,4 @@
-import numDecodings from "./DynamicPrograming/DecodeWays";
+import climbStairs from "./DynamicPrograming/ClimbingStairs";
+// import numDecodings from "./DynamicPrograming/DecodeWays";
 
-console.log(numDecodings("12"));
+console.log(climbStairs(5));
