@@ -1,12 +1,22 @@
+// function canJump(nums: number[]): boolean {
+//   let left = nums[0]
+//   for (let i = 1; i < nums.length; i++) {
+//     if (left === 0) {
+//       return false
+//     }
+//     left = Math.max(left - 1, nums[i])
+//   }
+//   return true
+// };
+
 function canJump(nums: number[]): boolean {
-  let left = nums[0]
-  for (let i = 1; i < nums.length; i++) {
-    if (left === 0) {
-      return false
+  let jump = nums.length - 1;
+  for (let i = nums.length - 2; i <= 0; i--) {
+    if(i + nums[i] >= jump) {
+      jump = i
     }
-    left = Math.max(left - 1, nums[i])
   }
-  return true
+  return jump === 0
 };
 
 // Example 1:
