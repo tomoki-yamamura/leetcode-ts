@@ -11,13 +11,15 @@
 
 function canJump(nums: number[]): boolean {
   let jump = nums.length - 1;
-  for (let i = nums.length - 2; i <= 0; i--) {
+  for (let i = nums.length - 2; i >= 0; i--) {
     if(i + nums[i] >= jump) {
       jump = i
     }
   }
   return jump === 0
 };
+
+export default canJump;
 
 // Example 1:
 

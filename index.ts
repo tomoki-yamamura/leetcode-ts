@@ -1,4 +1,4 @@
-import climbStairs from "./DynamicPrograming/ClimbingStairs";
-// import numDecodings from "./DynamicPrograming/DecodeWays";
+import canJump from "./DynamicPrograming/CanJump";
 
-console.log(climbStairs(5));
+
+console.log(canJump([2,3,1,1,4]));
