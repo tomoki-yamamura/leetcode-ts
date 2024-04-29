@@ -1,35 +1,69 @@
-const detectCycle = (course: number, classesNeeded: number[][], visited: boolean[]) => {
-  const reqs = classesNeeded[course];
+// const detectCycle = (course: number, classesNeeded: number[][], visited: boolean[]) => {
+//   const reqs = classesNeeded[course];
   
+//   if (visited[course]) return true;
+//   if (reqs.length === 0) return false;
+
+//   visited[course] = true;
+
+//   while (reqs.length) {
+//       if (detectCycle(reqs[reqs.length - 1], classesNeeded, visited)) return true;
+//       reqs.pop();
+//   }
+
+//   visited[course] = false;
+//   return false;
+// }
+
+const detectCycle = (course: number, classesNeeded: number[][], visited: boolean[]): boolean => {
+  const reqs = classesNeeded[course]
   if (visited[course]) return true;
-  if (!reqs.length) return false;
+  if (reqs.length === 0) return false;
 
   visited[course] = true;
 
-  while (reqs.length) {
-      if (detectCycle(reqs[reqs.length - 1], classesNeeded, visited)) return true;
-      reqs.pop();
+  while(reqs.length > 0) {
+    if (detectCycle(reqs[reqs.length-1], classesNeeded, visited)) return true;
+    reqs.pop();
   }
-
-  visited[course] = false;
-  return false;
+  visited[course] = false
+  return false
 }
 
 function canFinish(numCourses: number, prerequisites: number[][]): boolean {
   if (prerequisites.length === 0) return true
   const classesNeeded: number[][] = Array.from({length: numCourses}, () => []);
   prerequisites.forEach(([course, prereq]) => {
-    classesNeeded[course].push(prereq)
+    classesNeeded[course].push(prereq);
   })
-
-  const visited = Array.from({ length: numCourses}, () => false);
+  const visited = Array.from({length: numCourses}, () => false);
   for (const [course, _] of prerequisites) {
-    if (detectCycle(course, classesNeeded, visited)) return false
-}
+    if(detectCycle(course, classesNeeded, visited)) return false
+  }
   return true
-};
+}
 
-const n = 5
-const prerequisites = [[0,1],[0,2],[1,3],[1,4],[3,4]]
+// function canFinish(numCourses: number, prerequisites: number[][]): boolean {
+//   if (prerequisites.length === 0) return true
+//   const classesNeeded: number[][] = Array.from({length: numCourses}, () => []);
+//   prerequisites.forEach(([course, prereq]) => {
+//     classesNeeded[course].push(prereq)
+//   })
 
-canFinish(5, prerequisites)
+//   const visited = Array.from({ length: numCourses}, () => false);
+//   for (const [course, _] of prerequisites) {
+//     if (detectCycle(course, classesNeeded, visited)) return false
+// }
+//   return true
+// };
+
+
+
+// const n = 5
+// const prerequisites = [[0,1],[0,2],[1,3],[1,4],[3,4]]
+
+// canFinish(5, prerequisites)
+
+export {
+  canFinish
+}
