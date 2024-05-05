@@ -21,6 +21,9 @@ function pacificAtlantic(heights: number[][]): number[][] {
     dfs(0, col, Number.MIN_SAFE_INTEGER, pacific);
     dfs(numRows-1, col, Number.MIN_SAFE_INTEGER, atlantic);
    }
+   console.log("pacific", pacific);
+   console.log("atlantic", atlantic);
+   
    //and for the first and last columns
    for (let row = 0; row < numRows; row++){
      dfs(row, 0, Number.MIN_SAFE_INTEGER, pacific)
