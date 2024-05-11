@@ -1,5 +1,5 @@
-import insert from "./interval/InsertInterval"
+import merge from "./interval/MergeInterval"
 
-const intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
-insert(intervals, newInterval)
+const intervals = [[1,3],[2,6],[8,10],[15,18]]
+merge(intervals)
 // Example 1:

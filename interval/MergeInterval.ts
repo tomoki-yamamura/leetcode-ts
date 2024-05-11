@@ -24,6 +24,7 @@ merged.push(mergedInterval);
 return merged;    
 };
 
+export default merge
 
 // Example 1:
 
