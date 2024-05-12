@@ -1,5 +1,19 @@
-import merge from "./interval/MergeInterval"
+import reverseList, { ListNode } from "./linkedList/Reverse";
 
-const intervals = [[1,3],[2,6],[8,10],[15,18]]
-merge(intervals)
-// Example 1:
+const arr = [1, 2, 3, 4, 5];
+
+let head: ListNode | null = null;
+let current: ListNode | null = null;
+for (let i = 0; i < arr.length; i++) {
+    const node = new ListNode(arr[i]);
+    if (head === null) {
+        head = node;
+        current = node;
+    } else {
+        current!.next = node;
+        current = node;
+    }
+}
+
+const result = reverseList(head);
+console.log(result);
