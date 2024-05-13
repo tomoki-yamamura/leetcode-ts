@@ -9,14 +9,16 @@ export class ListNode {
 }
  
 
-function reverseList(head: ListNode | null): ListNode | null {
-  if (head === null) return null
-  let current: ListNode | null = null
-  while(head !== null) {
-    current = new ListNode(head.val, current)
-    head = head.next
-  }
-  return current
+function reverseList(
+  head: ListNode | null,
+  parent: ListNode | null = null,
+): ListNode | null {
+  if (!head) return parent;
+
+  const next = head.next;
+  head.next = parent;
+
+  return reverseList(next, head);
 };
 const arr = [1, 2, 3, 4, 5];
 

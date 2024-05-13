@@ -15,5 +15,5 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 
-const result = reverseList(head);
+const result = reverseList(head, null);
 console.log(result);
