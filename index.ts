@@ -1,19 +1,7 @@
-import reverseList, { ListNode } from "./linkedList/Reverse";
+import mergeTwoLists, { ListNode } from "./linkedList/MergeTwo";
 
-const arr = [1, 2, 3, 4, 5];
+const list1 = new ListNode(1, new ListNode(2, new ListNode(4, null)))
+const list2 = new ListNode(1, new ListNode(3, new ListNode(4, null)))
 
-let head: ListNode | null = null;
-let current: ListNode | null = null;
-for (let i = 0; i < arr.length; i++) {
-    const node = new ListNode(arr[i]);
-    if (head === null) {
-        head = node;
-        current = node;
-    } else {
-        current!.next = node;
-        current = node;
-    }
-}
-
-const result = reverseList(head, null);
-console.log(result);
+const resu = mergeTwoLists(list1, list2)
+console.log(resu);
