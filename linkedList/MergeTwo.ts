@@ -7,31 +7,23 @@ export class ListNode {
   }
 }
 
-export default function mergeTwoLists(
+export function mergeTwoLists(
   list1: ListNode | null,
   list2: ListNode | null
 ): ListNode | null {
-  if (!list1) {
-    return list2;
+  const mergedHead: ListNode = new ListNode(-1, null);
+  let prev: ListNode = mergedHead;
+
+  while(list1 && list2) {
+    if(list1.val <= list2.val) {
+      prev.next = list1
+      list1 = list1.next
+    } else {
+      prev.next = list2
+      list2 = list2.next
+    }
+    prev = prev.next
   }
-
-  if (!list2) {
-    return list1;
-  }
-
-  let nodeValue: number;
-  let toBeMergedList1: ListNode | null;
-  let toBeMergedList2: ListNode | null;
-
-  if (list1.val < list2.val) {
-    nodeValue = list1.val;
-    toBeMergedList1 = list1.next;
-    toBeMergedList2 = list2;
-  } else {
-    nodeValue = list2.val;
-    toBeMergedList1 = list1;
-    toBeMergedList2 = list2.next;
-  }
-
-  return new ListNode(nodeValue, mergeTwoLists(toBeMergedList1, toBeMergedList2))
+  prev.next = list1 ? list1 : list2;
+  return mergedHead.next;
 }
