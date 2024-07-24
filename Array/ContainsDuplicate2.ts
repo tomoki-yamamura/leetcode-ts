@@ -1,11 +1,13 @@
 export function containsNearbyDuplicate(nums: number[], k: number): boolean {
-  for(let i =0; i < nums.length; i++) {
-    for(let j = i+1; j < nums.length; j++) {
-      if (k < (j-i)) break
-      if (nums[i] == nums[j]) return true
-    }
+  const hasmap = new Map();
+  for (let idx = 0; idx < nums.length; idx++) {
+      // Check if the difference betweend duplicates is less than k
+      if (hasmap.get(nums[idx]) && idx - hasmap.get(nums[idx]) <= k) {
+          return true;
+      }
+      hasmap.set(nums[idx], idx);
   }
-  return false
+  return false;
 };
 
 // Example 1:
