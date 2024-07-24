@@ -1,8 +1,6 @@
-import { ListNode } from "./linkedList/MergeTwo";
-import reorderList from "./linkedList/ReorderList";
+import { containsNearbyDuplicate } from "./Array/ContainsDuplicate2";
 
-const list1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))))
-// const list2 = new ListNode(1, new ListNode(3, new ListNode(4, null)))
 
-const resu = reorderList(list1)
+
+const resu = containsNearbyDuplicate([1,2,3,1,2,3], 2)
 console.log(resu);
