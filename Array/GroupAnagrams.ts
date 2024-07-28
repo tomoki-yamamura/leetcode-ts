@@ -1,11 +1,24 @@
-/**
- * @param {string} s
- * @return {string}
- */
-var getSignature = function(s) {
-  const count = Array(26).fill(0);
-  for (const c of s) {
-      count[c.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+export function groupAnagrams(strs: string[]): string[][] {
+    
+  const result: string[][] = []
+  const signatureMap = new Map()
+
+  for (const s of strs) {
+    const signature = getSignature(s)
+    if (!signatureMap.has(signature)) {
+      signatureMap.set(signature, [])
+    }
+    signatureMap.get(signature).push(s)
+  }
+
+  signatureMap.forEach(value => result.push(value))
+  return result
+};
+
+function getSignature(words: string) {
+  const count = Array(26).fill(0)
+  for (const w of words) {
+    count[w.charCodeAt(0) - 'a'.charCodeAt(0)]++
   }
 
   const result = [];
@@ -16,25 +29,4 @@ var getSignature = function(s) {
   }
 
   return result.join('');
-};
-
-/**
-* @param {string[]} strs
-* @return {string[][]}
-*/
-var groupAnagrams = function(strs) {
-  const result = [];
-  const groups = new Map();
-
-  for (const s of strs) {
-      const signature = getSignature(s);
-      if (!groups.has(signature)) {
-          groups.set(signature, []);
-      }
-      groups.get(signature).push(s);
-  }
-
-  groups.forEach(value => result.push(value));
-
-  return result;
-};
+}

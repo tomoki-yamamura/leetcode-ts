@@ -1,6 +1,7 @@
-import { containsNearbyDuplicate } from "./Array/ContainsDuplicate2";
+
+import { groupAnagrams } from "./Array/GroupAnagrams";
 
 
 
-const resu = containsNearbyDuplicate([1,2,3,1,2,3], 2)
+const resu = groupAnagrams(["eat","tea","tan","ate","nat","bat"])
 console.log(resu);
