@@ -1,7 +1,8 @@
 
+import { customSortString } from "./Array/CustomSortString";
 import { groupAnagrams } from "./Array/GroupAnagrams";
 
 
 
-const resu = groupAnagrams(["eat","tea","tan","ate","nat","bat"])
+const resu = customSortString("cba", "abcd")
 console.log(resu);
