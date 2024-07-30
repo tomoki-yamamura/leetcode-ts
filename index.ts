@@ -1,8 +1,8 @@
 
 import { customSortString } from "./Array/CustomSortString";
-import { groupAnagrams } from "./Array/GroupAnagrams";
+import { sortJumbled } from "./Array/SortJump";
 
 
 
-const resu = customSortString("cba", "abcd")
+const resu = sortJumbled([8,9,4,0,2,1,3,5,7,6], [991,338,38])
 console.log(resu);
