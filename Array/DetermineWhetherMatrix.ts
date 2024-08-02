@@ -1,18 +1,24 @@
 function findRotation(mat: number[][], target: number[][]): boolean {
-  let width = mat[0].length
-  let height = mat.length
+  let width = mat[0].length;
+  let height = mat.length;
 
   let normal = true;
-  let right90 = true;
-  let right180 = true;
-  let right270 = true;
+  let rightOneTime = true;
+  let rightTwoTimes = true;
+  let rightThreeTimes = true;
 
-  for(let i = 0; i < height; i++) {
-    for(let j = 0; j < width; j++) {
+  for (let i = 0; i < height; i++) {
+    for (let j = 0; j < width; j++) {
       if (mat[i][j] !== target[i][j]) {
-        normal = false
+        normal = false;
       }
-      if (mat[i][j] !== target[j])
+      if (mat[i][j] !== target[j][width - 1 - i]) {
+        rightOneTime = false;
+      }
+      if (mat[i][j] !== target[height - 1 - i][width - 1 - j]) {
+        rightTwoTimes = false;
+      }
     }
   }
-};
+  return normal || rightOneTime || rightTwoTimes || rightThreeTimes;
+}
