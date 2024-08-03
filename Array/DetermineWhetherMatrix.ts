@@ -1,4 +1,4 @@
-function findRotation(mat: number[][], target: number[][]): boolean {
+export function findRotation(mat: number[][], target: number[][]): boolean {
   let width = mat[0].length;
   let height = mat.length;
 
