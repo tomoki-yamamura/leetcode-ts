@@ -12,11 +12,14 @@ export function findRotation(mat: number[][], target: number[][]): boolean {
       if (mat[i][j] !== target[i][j]) {
         normal = false;
       }
-      if (mat[i][j] !== target[j][width - 1 - i]) {
-        rightOneTime = false;
+      if (mat[i][j] !== target[j][width-1-i]) {
+        rightOneTime = false
       }
-      if (mat[i][j] !== target[height - 1 - i][width - 1 - j]) {
-        rightTwoTimes = false;
+      if (mat[i][j] !== target[height-1-i][width-1-j]) {
+        rightTwoTimes = false
+      }
+      if (mat[i][j] !== target[height-1-j][i]) {
+        rightThreeTimes = false
       }
     }
   }
