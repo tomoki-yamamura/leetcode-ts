@@ -1,9 +1,9 @@
-
-import { customSortString } from "./Array/CustomSortString";
-import { findRotation } from "./Array/DetermineWhetherMatrix";
-import { sortJumbled } from "./Array/SortJump";
+import { diagonalSum } from "./Array/MatrixDiagonalSum";
 
 
 
-const resu = findRotation([[0,1],[1,0]], [[1,0],[0,1]])
+
+const resu = diagonalSum([[1,2,3],
+  [4,5,6],
+  [7,8,9]])
 console.log(resu);
