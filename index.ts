@@ -1,8 +1,5 @@
-import { diagonalSum } from "./Array/MatrixDiagonalSum";
-import { rotate } from "./Array/RotateImage";
-import { isValid } from "./Array/ValidParentheses";
+import { minOperations } from "./Array/CrawlerLogFolder";
 
 
-
-const resu = isValid("([{])}")
+const resu = minOperations(["d1/","d2/","../","d21/","./"])
 console.log(resu);
