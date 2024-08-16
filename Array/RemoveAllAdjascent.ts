@@ -1,9 +1,7 @@
 function removeDuplicates(s: string): string {
-  const splited = s.split("")
-  const result: string[] = []
-  splited.forEach((v, i) => {
-    if (result[i-1] === v) {
-      result.pop()
-    }
-  })
+  const stack: string[] = []
+  for (const char of s) {
+    stack[stack.length - 1] === char ? stack.pop() : stack
+  }
+  return stack.join("");
 };
