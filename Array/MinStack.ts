@@ -1,24 +1,34 @@
 class MinStack {
-  private stack: number[]
+  private stack: number[];
+  private minStack: number[];
 
   constructor() {
-    this.stack = []
+    this.stack = [];
+    this.minStack = [];
   }
 
   push(val: number): void {
-      this.stack.push(val)
+    this.stack.push(val);
+    // If the minStack is empty or the current value is smaller than or equal to the current minimum
+    if (this.minStack.length === 0 || val <= this.minStack[this.minStack.length - 1]) {
+      this.minStack.push(val);
+    }
   }
 
   pop(): void {
-      this.stack.pop()
+    const poppedValue = this.stack.pop();
+    // If the popped value is the same as the minimum value, pop it from the minStack as well
+    if (poppedValue === this.minStack[this.minStack.length - 1]) {
+      this.minStack.pop();
+    }
   }
 
   top(): number {
-    return [...this.stack].sort((a, b) => b - a)[0]
+    return this.stack[this.stack.length - 1];
   }
 
   getMin(): number {
-    return [...this.stack].sort((a, b) => a - b)[0]
+    return this.minStack[this.minStack.length - 1];
   }
 }
 
@@ -42,10 +52,10 @@ class MinStack {
 // minStack.getMin(); // return -2
 
 /**
-* Your MinStack object will be instantiated and called as such:
-* var obj = new MinStack()
-* obj.push(val)
-* obj.pop()
-* var param_3 = obj.top()
-* var param_4 = obj.getMin()
-*/
+ * Your MinStack object will be instantiated and called as such:
+ * var obj = new MinStack()
+ * obj.push(val)
+ * obj.pop()
+ * var param_3 = obj.top()
+ * var param_4 = obj.getMin()
+ */
