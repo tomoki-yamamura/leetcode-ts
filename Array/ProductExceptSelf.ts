@@ -4,15 +4,15 @@ function productExceptSelf(nums: number[]): number[] {
   let postfix = 1;
   for(let i = 0; i < nums.length; i++) {
     result[i] *= prefix
-    result[nums.length-1-i] *= postfix
+    result[nums.length - 1 - i] *= postfix
     prefix *= nums[i]
-    postfix *= nums[nums.length - 1 - i];
+    postfix *= nums[nums.length -1 -i]
   }
 
   return result
 };
 
-productExceptSelf([1,2,3,4])
+
 
 // Example 1:
 

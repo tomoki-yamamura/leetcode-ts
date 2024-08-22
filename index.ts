@@ -1,5 +1,5 @@
-import { minOperations } from "./Array/CrawlerLogFolder";
+import { productExceptSelf } from "./Array/ProductExceptSelf";
 
 
-const resu = minOperations(["d1/","d2/","../","d21/","./"])
+const resu = productExceptSelf([1,2,3,4])
 console.log(resu);
