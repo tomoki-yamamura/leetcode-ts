@@ -1,5 +1,5 @@
-import { productExceptSelf } from "./Array/ProductExceptSelf";
+import { getSumAbsoluteDifferences } from "./Array/SumfAbsoluteDifferencesinSortedArray";
 
 
-const resu = productExceptSelf([1,2,3,4])
+const resu = getSumAbsoluteDifferences([1,2,3,4])
 console.log(resu);
