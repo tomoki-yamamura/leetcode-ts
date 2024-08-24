@@ -1,23 +1,24 @@
 export function maximumSubarraySum(nums: number[], k: number): number {
-  let diffmap: Map<number, number> = new Map()
+  let numMap: Map<number, number> = new Map()
   let sum = 0;
   let max = -Infinity
   for (let i = 0; i < nums.length; i++) {
     sum += nums[i]
-    if (diffmap.get(nums[i]+k) !== undefined) {
-      max = Math.max(max, sum - diffmap.get(nums[i]+k)!)
+    if (numMap.get(nums[i]+k) !== undefined) {
+      max = Math.max(max, sum - numMap.get(nums[i]+k)!)
     }
-    if (diffmap.get(nums[i]-k) !== undefined) {
-      max = Math.max(max, sum - diffmap.get(nums[i]-k)!)
+    if (numMap.get(nums[i]-k) !== undefined) {
+      max = Math.max(max, sum - numMap.get(nums[i]-k)!)
     }
-    if (diffmap.get(nums[i]) !== undefined) {
-      const min = Math.min(sum-nums[i], diffmap.get(nums[i])!)
-      diffmap.set(nums[i], min)
+    if (numMap.get(nums[i]) !== undefined) {
+      const min = Math.min(sum-nums[i], numMap.get(nums[i])!)
+      numMap.set(nums[i], min)
     } else {
-      diffmap.set(nums[i], sum - nums[i])
+      numMap.set(nums[i], sum - nums[i])
     }
   }
-
+// nums = [1, 3, 2, 1, 5]
+// k = 2
   return max === -Infinity ? 0 : max
 };
 
