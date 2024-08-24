@@ -1,4 +1,4 @@
-export function getSumAbsoluteDifferences(nums: number[]): number[] {
+function getSumAbsoluteDifferences(nums: number[]): number[] {
   let totalSum = nums.reduce((sum, n) => sum + n, 0);
   let left = 0, right = totalSum;
   let result = [];
@@ -11,3 +11,4 @@ export function getSumAbsoluteDifferences(nums: number[]): number[] {
 
   return result;
 };
+

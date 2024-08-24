@@ -1,5 +1,5 @@
-import { getSumAbsoluteDifferences } from "./Array/SumfAbsoluteDifferencesinSortedArray";
+import { maximumSubarraySum } from "./Array/MaximumGoodSubarraySum";
 
 
-const resu = getSumAbsoluteDifferences([1,2,3,4])
+const resu = maximumSubarraySum([1,2,3,4,5,6], 1)
 console.log(resu);
