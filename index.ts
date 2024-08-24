@@ -1,5 +1,5 @@
 import { maximumSubarraySum } from "./Array/MaximumGoodSubarraySum";
 
 
-const resu = maximumSubarraySum([1,2,3,4,5,6], 1)
+const resu = maximumSubarraySum([1, 3, 2, 1, 5], 2)
 console.log(resu);
