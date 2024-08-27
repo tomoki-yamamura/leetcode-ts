@@ -1,5 +1,5 @@
-import { maximumSubarraySum } from "./Array/MaximumGoodSubarraySum";
+import { subarraysDivByK } from "./Array/SubarraySumsDivisiblebyK";
 
 
-const resu = maximumSubarraySum([1, 3, 2, 1, 5], 2)
+const resu = subarraysDivByK([4,5,0,-2,-3,1], 5)
 console.log(resu);

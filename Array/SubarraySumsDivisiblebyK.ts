@@ -1,4 +1,4 @@
-function subarraysDivByK(nums: number[], k: number): number {
+export function subarraysDivByK(nums: number[], k: number): number {
 
   let map = []
   map[0] = 1
@@ -6,8 +6,12 @@ function subarraysDivByK(nums: number[], k: number): number {
   let total = 0
   for (const num of nums) {
     count = (count + num) % k
-    if(count<0) count +=k;
-    if(map[count]) total += map[count]
+    if(count<0) {
+      count +=k;
+    }
+    if(map[count]) {
+      total += map[count]
+    }
     map[count] = map[count] ? map[count] + 1 : 1
   }
 
