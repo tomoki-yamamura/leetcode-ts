@@ -1,22 +1,29 @@
 export function subarraysDivByK(nums: number[], k: number): number {
-
-  let map = []
-  map[0] = 1
-  let count = 0
+  const map: Map<number, number> = new Map()
   let total = 0
+  let result = 0
+  // 初期値として reminder が 0 の場合に対応するため
+  map.set(0, 1)
   for (const num of nums) {
-    count = (count + num) % k
-    if(count<0) {
-      count +=k;
+    total += num
+    let reminder = total % k
+    // JavaScript の % は負の値を返すことがあるので調整
+    if (reminder < 0) {
+      reminder += k
     }
-    if(map[count]) {
-      total += map[count]
+    if (map.has(reminder)) {
+      result += map.get(reminder)!
+      map.set(reminder, map.get(reminder)! + 1)
+    } else {
+      map.set(reminder, 1)
     }
-    map[count] = map[count] ? map[count] + 1 : 1
   }
 
-  return total
+  return result
 };
+
+const resu = subarraysDivByK([4,5,0,-2,-3,1], 5)
+console.log(resu);
 
 // Example 1:
 
