@@ -1,9 +1,14 @@
-export function isSubsequence(s: string, t: string): boolean {
-  for(const letter of s) {
-    const index = t.indexOf(letter)
-    t.substring(index-1, index)
+function isSubsequence(s: string, t: string): boolean {
+  if (s.length > t.length) return false
+  const t_length = t.length
+  let subsequence = 0
+  for (let i = 0; i < t_length; i++) {
+    if (t[i] === s[subsequence]) {
+      subsequence++
+    }
   }
-  return true
+
+  return subsequence === s.length
 };
 
 // Example 1:
