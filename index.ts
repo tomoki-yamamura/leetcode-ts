@@ -1,5 +1,4 @@
-import { subarraysDivByK } from "./Array/SubarraySumsDivisiblebyK";
+import { isSubsequence } from "./Array/IsSubsequence";
 
-
-const resu = subarraysDivByK([4,5,0,-2,-3,1], 5)
+const resu = isSubsequence("aaaaaa", "bbaaaa")
 console.log(resu);
