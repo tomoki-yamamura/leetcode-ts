@@ -1,3 +1,3 @@
-function threeSum(nums: number[]): number[][] {
+function threeSum2(nums: number[]): number[][] {
     
 };
