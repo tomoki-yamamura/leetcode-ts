@@ -1,4 +1,4 @@
-import { isSubsequence } from "./Array/IsSubsequence";
+import { findMaxAverage } from "./Array/MaximumAverageSubarrayI";
 
-const resu = isSubsequence("aaaaaa", "bbaaaa")
+const resu = findMaxAverage([0,4,0,3,2], 1)
 console.log(resu);
