@@ -1,4 +1,4 @@
-function getAverages(nums: number[], k: number): number[] {
+export function getAverages(nums: number[], k: number): number[] {
   const d = 2 * k + 1;
   let sum = 0;
   const result = [];
