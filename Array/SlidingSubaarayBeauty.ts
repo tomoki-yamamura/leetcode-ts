@@ -24,6 +24,8 @@ export function getSubarrayBeauty(nums: number[], k: number, x: number): number[
         }
       }
     }
+    f.set(nums[L], f.get(nums[L]) - 1);
+    L++;
   }
   return result
 }
