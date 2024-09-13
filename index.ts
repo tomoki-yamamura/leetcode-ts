@@ -1,8 +1,9 @@
-import { getSubarrayBeauty } from "./Array/SlidingSubaarayBeauty";
+import { lengthOfLongestSubstring } from "./Array/Longest SubstringWithoutRepeatingCharacters";
 
+console.log(lengthOfLongestSubstring("abcabcbb"));
 
-const nums = [1,-1,-3,-2,3]
-const k = 3
-const x = 2
+// Input: s = "abcabcbb"
+// Output: 3
+// Explanation: The answer is "abc", with the length of 3.
+// Example 2:
 
-console.log(getSubarrayBeauty(nums, k, x));
