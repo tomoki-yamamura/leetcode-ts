@@ -1,7 +1,7 @@
 import { totalFruit } from "./Array/FruitIntoBasket";
 import { lengthOfLongestSubstring } from "./Array/Longest SubstringWithoutRepeatingCharacters";
 
-console.log(totalFruit([1,2,1]));
+console.log(totalFruit([3,3,3,1,2,1,1,2,3,3,4]));
 
 // Input: s = "abcabcbb"
 // Output: 3
