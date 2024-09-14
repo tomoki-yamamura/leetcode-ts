@@ -3,7 +3,7 @@ export function lengthOfLongestSubstring(s: string): number {
   let maxLength = 0;
   const set = new Set();
   for (let right = 0; right < s.length; right++) {
-    while(set.has(s[left])) {
+    while(set.has(s[right])) {
       set.delete(s[left])
       left++
     }
