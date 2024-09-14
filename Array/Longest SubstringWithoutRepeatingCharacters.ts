@@ -8,7 +8,7 @@ export function lengthOfLongestSubstring(s: string): number {
       left++
     }
     set.add(s[right]);
-    maxLength = Math.max(right-left-1, maxLength)
+    maxLength = Math.max(right-left+1, maxLength)
   }
   return maxLength
 }
