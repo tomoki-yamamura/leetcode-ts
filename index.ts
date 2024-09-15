@@ -1,10 +1,15 @@
-import { totalFruit } from "./Array/FruitIntoBasket";
-import { lengthOfLongestSubstring } from "./Array/Longest SubstringWithoutRepeatingCharacters";
+import { characterReplacement } from "./Array/LongestRepeatingCharacterReplacement";
 
-console.log(totalFruit([1,0,1,4,1,4,1,2,3]));
+console.log(characterReplacement("ABAB", 2));
+// Example 1:
 
-// Input: s = "abcabcbb"
-// Output: 3
-// Explanation: The answer is "abc", with the length of 3.
+// Input: s = "ABAB", k = 2
+// Output: 4
+// Explanation: Replace the two 'A's with two 'B's or vice versa.
 // Example 2:
 
+// Input: s = "AABABBA", k = 1
+// Output: 4
+// Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
+// The substring "BBBB" has the longest repeating letters, which is 4.
+// There may exists other ways to achieve this answer too.
