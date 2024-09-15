@@ -1,5 +1,7 @@
+// console.log(characterReplacement("AABABBA", 1));
+
 export function characterReplacement(s: string, k: number): number {
-  const map: any = [26]
+  const map: { [key: string]: number} = {}
   let largestCount = 0;
   let begin = 0;
   let maxLen = 0;

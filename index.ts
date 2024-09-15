@@ -1,6 +1,6 @@
 import { characterReplacement } from "./Array/LongestRepeatingCharacterReplacement";
 
-console.log(characterReplacement("ABAB", 2));
+console.log(characterReplacement("AABABBA", 1));
 // Example 1:
 
 // Input: s = "ABAB", k = 2
