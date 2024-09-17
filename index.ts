@@ -1,5 +1,4 @@
-import { minSubArrayLen } from "./Array/MinimumSizeSubarraySum";
+import { findDisappearedNumbers } from "./Array/FindAllNumbersDisappearedinanArray";
 
-
-const resu = minSubArrayLen(7, [2,3,1,2,4,3])
+const resu = findDisappearedNumbers([4,3,2,7,8,2,3,1])
 console.log(resu);
