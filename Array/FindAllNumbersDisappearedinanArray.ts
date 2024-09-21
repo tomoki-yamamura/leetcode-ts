@@ -1,15 +1,14 @@
 export function findDisappearedNumbers(nums: number[]): number[] {
   const len = nums.length+1;
   const hashMap = new Array(len).fill(0)
-  const result = []
   for (let i = 0; i < len - 1; i++) {
     hashMap[nums[i]] += 1
   }
-  for (let i = 0; i < hashMap.length; i++) {
-    if (i !== 0 && hashMap[i] === 0) {
-      result.push(i)
+  const result = hashMap.filter((v, i) => {
+    if (v === 0 && i !== 0) {
+      return i
     }
-  }
+  })
 
   return result
 };
