@@ -1,15 +1,20 @@
 function subsets(nums: number[]): number[][] {
   const result: number[][] = [];
+  const subset: number[] = [];
 
-  function backtrack(start: number, currentSet: number[]): void {
-    result.push([...currentSet]);
-    for(let i = 0; i < nums.length; i++) {
-      currentSet.push(nums[i]);
-      backtrack(i+1, currentSet);
-      currentSet.pop();
+  function createSubset(i: number): void {
+    if(i === nums.length) {
+      result.push([...subset])
+      return
     }
+
+    subset.push(nums[i])
+    createSubset(i+1);
+
+    subset.pop();
+    createSubset(i+1)
   }
 
-  backtrack(0, []);
+  createSubset(0);
   return result
 };
