@@ -1,4 +1,4 @@
-import { findDisappearedNumbers } from "./Array/FindAllNumbersDisappearedinanArray";
+import { subsets } from "./Array/Subsets";
 
-const resu = findDisappearedNumbers([4,3,2,7,8,2,3,1])
+const resu = subsets([1,2,3])
 console.log(resu);
