@@ -1,5 +1,4 @@
-import { combinationSum } from "./Array/ConmbinationSub";
-import { subsets } from "./Array/Subsets";
+import { permute } from "./Array/Permutations";
 
-const resu = combinationSum([2,3,6,7], 7)
+const resu = permute([1,2,3])
 console.log(resu);

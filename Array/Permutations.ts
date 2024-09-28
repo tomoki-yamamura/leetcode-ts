@@ -1,4 +1,4 @@
-function permute(nums: number[]): number[][] {
+export function permute(nums: number[]): number[][] {
   const result: number[][] = [];
   dfs(nums, [], Array(nums.length).fill(false), result);
   return result;
