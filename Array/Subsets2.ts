@@ -1,19 +1,23 @@
-function subsetsWithDup(nums: number[]): number[][] {
+export function subsetsWithDup(nums: number[]): number[][] {
   const result: number[][] = [];
-  nums.sort((a,b ) => a -b)
-  const subSets: number[] = []
-  function backtrack(start: number) {
-    result.push([...subSets])
-    for (let i = 0; i < nums.length; i++) {
-      if (i > start && nums[i] === nums[i-1]) continue
-      subSets.push(nums[i])
-      backtrack(i+1)
-      subSets.pop()
+  const subSets: number[] = [];
+  nums.sort((a, b) => a - b);
+  function backtrack(idx: number) {
+    if (idx >= nums.length) {
+      result.push([...subSets]);
+      return;
     }
+    subSets.push(nums[idx]);
+    backtrack(idx + 1);
+    subSets.pop();
+    while(idx+1 < nums.length && nums[idx] === nums[idx+1]) {
+      idx++
+    }
+    backtrack(idx+1)
   }
   backtrack(0)
   return result
-};
+}
 
 // export function permute(nums: number[]): number[][] {
 //   const result: number[][] = [];

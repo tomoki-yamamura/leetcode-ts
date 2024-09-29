@@ -1,4 +1,4 @@
-import { permute } from "./Array/Permutations";
+import { subsetsWithDup } from "./Array/Subsets2";
 
-const resu = permute([1,2,3])
+const resu = subsetsWithDup([1,2,2])
 console.log(resu);
