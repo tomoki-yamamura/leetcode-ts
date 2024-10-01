@@ -7,15 +7,26 @@ class ListNode {
   }
 }
 
+// function getDecimalValue(head: ListNode | null): number {
+//   const map: number[] = []
+//   function nextNode(node: ListNode | null) {
+//     if (node === null) return
+//       map.push(node.val)
+//       nextNode(node?.next!)
+//   }
+//   nextNode(head)
+//   if (map.length === 0) return 0
+//   const binary = map.reduce((acc, cur) => String(acc) + String(cur), "")
+//   return parseInt(binary, 2)
+// }
+
 function getDecimalValue(head: ListNode | null): number {
-  const map: number[] = []
-  function nextNode(node: ListNode | null) {
-    if (node === null) return
-      map.push(node.val)
-      nextNode(node?.next!)
+  let cur = head;
+  let dec = 0;
+  while(cur) {
+    dec *= 2;
+    dec += cur.val
+    cur = cur.next
   }
-  nextNode(head)
-  if (map.length === 0) return 0
-  const binary = map.reduce((acc, cur) => String(acc) + String(cur), "")
-  return parseInt(binary, 2)
+  return dec
 }
