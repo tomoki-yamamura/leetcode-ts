@@ -1,6 +1,6 @@
 import { ListNode } from "./MergeTwo";
 
-function removeElements(head: ListNode | null, val: number): ListNode | null {
+export function removeElements(head: ListNode | null, val: number): ListNode | null {
   let dummy = new ListNode(0, head)
   let current: ListNode | null = dummy;
   while(current.next) {
