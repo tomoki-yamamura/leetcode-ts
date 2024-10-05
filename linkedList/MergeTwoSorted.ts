@@ -28,8 +28,9 @@ import { ListNode } from "./MergeTwo"
 //   cur.next = list1 || list2
 //   return dummy.next
 // };
-
-function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+// const list1 = new ListNode(1, new ListNode(2, new ListNode(4)))
+// const list2 = new ListNode(1, new ListNode(3, new ListNode(4)))
+export function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
   if (!list2) return list1
   if (!list1) return list2
   else if (list1.val <= list2.val) {
