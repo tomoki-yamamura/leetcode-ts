@@ -12,19 +12,10 @@
 
 import { ListNode } from "./MergeTwo";
 
-function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
-  const L1s: number[] = []
-  const L2s: number[] = []  
+function addTwoNumbers(l1: ListNode | null, l2: ListNode | null, carry: number = 0): ListNode | null {
+  if(!l1 && !l2 && !carry) return null;
 
-  function createList(list: ListNode | null, map: number[]): void {
-    while(list) {
-      map.push(list.val)
-      list = list.next
-    }
-  }
-  createList(l1, L1s)
-  createList(l2, L2s)
-  L1s.reverse()
-  L2s.reverse()
-  
+  var total : number = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + (carry || 0);
+  carry = parseInt(total / 10 + '');
+  return new ListNode(total % 10, addTwoNumbers(l1!.next, l2!.next, carry));
 };
