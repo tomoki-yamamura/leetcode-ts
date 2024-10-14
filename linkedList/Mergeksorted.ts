@@ -10,9 +10,9 @@
  * }
  */
 
-import { ListNode } from "./MergeTwo";
+// import { ListNode } from "./MergeTwo";
 
 
-function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
+// function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
     
-};
+// };
