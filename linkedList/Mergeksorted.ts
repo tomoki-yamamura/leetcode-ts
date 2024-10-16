@@ -28,7 +28,7 @@ function mergeTwoLists(result: ListNode | null, list: ListNode | null): ListNode
     result.next = mergeTwoLists(result.next, list)
     return result
   } else {
-    result.next = mergeTwoLists(result, list.next)
+    list.next = mergeTwoLists(result, list.next)
     return list
   }
 }
