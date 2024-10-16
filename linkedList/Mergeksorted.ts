@@ -14,8 +14,18 @@ import { ListNode } from "./MergeTwo";
 
 
 function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
-    
+  let result: ListNode | null = null;
+  for (let i = 0; i < lists.length; i++) {
+    result = mergeTwoLists(result, lists[i])
+  }
+  return result
 };
+
+function mergeTwoLists(result: ListNode | null, list: ListNode | null): ListNode | null {
+  if(!result) return list
+  if (!list) return result
+
+}
 
 // Example 1:
 
