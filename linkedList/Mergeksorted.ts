@@ -24,7 +24,13 @@ function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
 function mergeTwoLists(result: ListNode | null, list: ListNode | null): ListNode | null {
   if(!result) return list
   if (!list) return result
-
+  if(result.val < list.val) {
+    result.next = mergeTwoLists(result.next, list)
+    return result
+  } else {
+    result.next = mergeTwoLists(result, list.next)
+    return list
+  }
 }
 
 // Example 1:
