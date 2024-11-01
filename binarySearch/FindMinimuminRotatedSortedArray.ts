@@ -1,3 +1,9 @@
 function findMin(nums: number[]): number {
-  const middle = nums.length / 2
+  let left: number = 0
+  let right: number = nums.length - 1
+  let res: number = Infinity
+  while(left <= right) {
+    const mid = left + Math.floor((right-left)/2)
+    
+  }
 };
